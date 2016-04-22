@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>map task</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script 
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAuabky1LWazKjhVzEx4E8p_60A5oNuFg&callBack=initMap"></script>
+<script src="http://www.google.com/jsapi"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/data.json" type="text/javascript"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/markerclusterer.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="map" style="height:600px;margin-top:50px"></div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+	var input_Object = [ {
+		"lat" : 23.3481216431,
+		"lng" : 85.3261032104,
+		"time" : "2016-04-22 12:12:24"
+	}, {
+		"lat" : 23.3481216431,
+		"lng" : 85.3261032104,
+		"time" : "2016-04-22 11:56:08"
+	}, {
+		"lat" : 23.3481216431,
+		"lng" : 87.3261032104,
+		"time" : "2016-04-22 11:42:15"
+	}, {
+		"lat" : 23.3481216431,
+		"lng" : 85.3261032104,
+		"time" : "2016-04-22 11:27:09"
+	}, {
+		"lat" : 25.3481216431,
+		"lng" : 85.3261032104,
+		"time" : "2016-04-22 11:11:33"
+	}, {
+		"lat" : 23.3481216431,
+		"lng" : 85.3261032104,
+		"time" : "2016-04-22 10:56:08"
+	}, {
+		"lat" : 23.3481216431,
+		"lng" : 83.3261032104,
+		"time" : "2016-04-22 10:42:02"
+	}, {
+		"lat" : 20.3481216431,
+		"lng" : 45.3261032104,
+		"time" : "2016-04-22 10:42:02"
+	}, {
+		"lat" : 18.3481216431,
+		"lng" : 65.3261032104,
+		"time" : "2016-04-22 10:42:02"
+	} ];
+
+	$(function initMap() {
+
+		var centerLatLng = {
+			lat : 23.3481216431,
+			lng : 85.3261032104
+		};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom : 4,
+			center : centerLatLng
+		});
+
+		var uniqueLatLngs = {};
+		for (var i = 0; i < input_Object.length; i++) {
+			key = input_Object[i].lat +","+ input_Object[i].lng;
+			if(uniqueLatLngs[key] == undefined) {
+				uniqueLatLngs[key] = 1;
+			} else {
+				uniqueLatLngs[key] = uniqueLatLngs[key] + 1;
+			}
+			
+		}
+
+
+		var markers = []; 
+		$.each(uniqueLatLngs, function(key, val){
+			arr = key.split(",");
+		
+			var marker = new google.maps.Marker({
+				position : {
+					lat : parseFloat(arr[0]),
+					lng : parseFloat(arr[1])
+				},
+				map : map,
+				title : "locations of guy travelled",
+				infoWindow : new google.maps.InfoWindow({
+					content : "visited " + val + " time(s)"
+				})
+			});
+
+			google.maps.event.addListener(marker, 'click', function() {
+				this.infoWindow.open(map, this);
+			});
+			markers.push(marker);
+			
+		});
+
+		var mcOptions = {gridSize: 50, maxZoom: 15};
+		var mc = new MarkerClusterer(map, markers, mcOptions);
+
+	})
+</script>
