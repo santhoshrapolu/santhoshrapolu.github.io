@@ -1,0 +1,232 @@
+<html>
+<head>
+	<title>fb_trail</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+		crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+		integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+		crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+</head>
+<body style="font-family:helvetica, arial, sans-serif">
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+      	<button type="button" class="press_btn" data-target="#myModal" onclick="popup()">+ Create</button>
+         <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lr">
+               <!-- Modal content-->
+               <div class="modal-content " id="modal-content-id">
+                  <div class="modal-header" id="modal-header-id">
+                  	 <button type="button" class="creat_btn" > <span class="ui-icon ui-icon-mail-closed"></span><b>Create private Event </b><span class="ui-icon ui-icon-triangle-1-s"></span></button>
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-body_Div">
+                      <table class="modal-body_table">
+                        <tbody class="modal-body_tbody">
+                          <tr >
+                            <td><div>Event Photo</div></td><td><div class="frst_div"><div class="first-child uploadDiv"><a href="#" >efef</a></div><input id="input_btn" type="file"><div class="last-child"><a href="#">ergwer</a></div></div></td>
+                          </tr>
+                          <tr>
+                            <td><div>Event name</div></td><td></td>
+                          </tr>
+                          <tr>
+                            <td><div>Location</div></td><td></td>
+                          </tr>
+                          <tr>
+                            <td><div>Date/Time</div></td><td></td>
+                          </tr>
+                          <tr>
+                            <td><div>Description</div></td><td></td>
+                          </tr>
+                          <tr>
+                            <td><div></td><td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+  function popup(){   
+     $("#myModal").modal('show');
+
+     $(".uploadDiv").click(function(){
+        $("#input_btn").click();
+     });
+  };
+</script>
+<style type="text/css">
+#input_btn{
+  visibility: hidden;
+  width:1px;
+  height: 1px;
+}
+.frst_div{
+  width: 100%;
+  border: 1px solid #DEDEDE;
+  height: 60px;
+}
+.frst_div div{
+  display: inline-block;
+}
+.first-child,
+.last-child {
+  width: 50%;
+  margin: 0px auto;
+  padding: 20px;
+  float: left;
+  display: block;
+  cursor: pointer;
+}
+
+.first-child:hover,
+.last-child:hover {
+  background-color: #EFEFEF
+}
+
+tr td {
+  width: 50%;
+}
+tr td:first-child{
+  width: 25%;
+}
+tr td:last-child{
+  width: 75%;
+}
+
+.modal-body{
+  width: 100%;
+}
+ .modal-body_Div{
+  width: 100%;
+} 
+ .modal-body_table {
+  width: 100%;
+}
+ .modal-body_tbody{
+  width: 100%;
+}
+.modal-body tr{
+  width: 100%;
+  height:50px;
+}
+#modal-header-id{
+  padding:12px;
+  background-color: #EFEFEF;
+}
+#modal-content-id{
+    width: 600px;
+    min-height: 600px;
+    margin: 80px 0px 0px -112px;
+}
+.creat_btn{
+  background-color: white;
+  border: 1px solid rgba(134, 126, 126, 0.54);
+}
+.creat_btn span{
+  display: inline-block;
+}
+#popDiv{
+	display:none;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 36, 36, 0.95) ;
+    color:white;
+    font-size: 300px;
+    opacity: 0.9
+}
+#input_elements{
+	width:599px;
+	height:433px;
+	background-color: white;
+	margin:100px auto;
+}
+#pop_header{
+	background-color: #EFEFEF;
+	width: 100%;
+	height:50px;
+}
+#creat_btn{
+	margin: 7px 0px 0px 8px;
+	float:left;
+	color: white;
+	border: 1px solid rgba(179, 169, 169, 0.35);
+  background-color: #4E69A2;
+  line-height: 0.438571;
+	/*display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+   
+    border-radius: 4px;
+    color: black;
+    margin: 12px 0px 0px 9px;*/
+
+}
+.press_btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 0.8571;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #4e69a2;
+    color: white;
+
+}
+
+</style>
