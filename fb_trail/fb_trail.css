@@ -10,7 +10,8 @@
     padding-top: 2px;
     font-weight: 600;
     color: #4e5665;
-    background-color: #f6f7f8
+    background-color: #f6f7f8;
+    border: 1px solid black;
 }
 .modal-footer{
   padding: 5px;
