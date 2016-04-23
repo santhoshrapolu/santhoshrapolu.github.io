@@ -1,0 +1,144 @@
+#creat_id{
+    height: 27px;
+    padding-top: 2px;
+    font-weight: 600;
+    color: white;
+    background-color: #4e69a2;
+}
+#cancel_id{
+    height: 27px;
+    padding-top: 2px;
+    font-weight: 600;
+    color: #4e5665;
+    background-color: #f6f7f8
+}
+.modal-footer{
+  padding: 5px;
+}
+#CheckBox_id{
+  width: 100%;
+  color: #B1A9A9;
+}
+#Description_input{
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #DEDEDE;
+    padding-left: 19px;
+    padding-bottom: 20px;
+}
+#Date-Time_id a{
+    margin-left: 10px;
+}
+
+#Time_input,.date-picker{
+    width: 25%;
+    height: 30px;
+    border: 1px solid #DEDEDE;
+    padding-left: 19px;
+}
+#Event_name_input,#Location_input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #DEDEDE;
+    padding-left: 19px;
+}
+#input_btn{
+  visibility: hidden;
+  width:1px;
+  height: 1px;
+}
+.frst_div{
+  color: #EFEFEF;
+  width: 100%;
+  border: 1px solid #DEDEDE;
+  height: 54px;
+}
+.frst_div div{
+  display: inline-block;
+}
+.frst_div div {
+    color: #BDBBBB;
+    font-size: small;
+    text-decoration: none;
+  }
+.first-child,
+.last-child {
+  width: 50%;
+  margin: 0px auto;
+  padding: 18px;
+  float: left;
+  display: block;
+  cursor: pointer;
+}
+
+.first-child:hover,
+.last-child:hover {
+  background-color: #EFEFEF;
+  color: #4e5665;
+}
+
+tr td {
+  width: 50%;
+}
+tr td:first-child{
+  width: 25%;
+}
+tr td:last-child{
+  width: 75%;
+}
+
+.modal-body{
+  width: 100%;
+}
+ .modal-body_Div{
+  width: 100%;
+} 
+ .modal-body_table {
+  width: 100%;
+}
+ .modal-body_tbody{
+  width: 100%;
+  font-size: small;
+}
+.modal-body tr{
+  width: 100%;
+  height:50px;
+}
+#modal-header-id{
+  padding:12px;
+  background-color: #EFEFEF;
+}
+#modal-content-id{
+    width: 550px;
+    margin: 67px 0px 0px 0px;
+}
+.creat_btn{
+  background-color: white;
+  border: 1px solid rgba(134, 126, 126, 0.54);
+}
+.creat_btn span{
+  display: inline-block;
+}
+#input_elements{
+	width:599px;
+	height:433px;
+	background-color: white;
+	margin:100px auto;
+}
+#creat_btn{
+	margin: 7px 0px 0px 8px;
+	float:left;
+	color: white;
+	border: 1px solid rgba(179, 169, 169, 0.35);
+  background-color: #4E69A2;
+  line-height: 0.438571;
+}
+#press_btn{
+
+    background-color: #4e69a2;
+    color: white;
+    height: 27px;
+    padding-top: 2px;
+    font-weight: 600;
+
+}

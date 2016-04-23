@@ -1,0 +1,136 @@
+<html>
+   <head>
+      <title>fb_trail</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet"
+         href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script
+         src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <link rel="stylesheet"
+         href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script
+         src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+         crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+         integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+         crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <script
+         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+         crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="fb_trail.css">
+   </head>
+   <body style="font-family:helvetica, arial, sans-serif">
+      <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <button type="button" id="press_btn" class="btn" data-target="#myModal" onclick="popup()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+            <div class="modal fade" id="myModal" role="dialog">
+               <div class="modal-dialog modal-lr">
+                  <!-- Modal content-->
+                  <div class="modal-content " id="modal-content-id">
+                     <div class="modal-header" id="modal-header-id">
+                        <button type="button" class="creat_btn" > <span class="ui-icon ui-icon-mail-closed"></span><b>Create private Event </b><span class="ui-icon ui-icon-triangle-1-s"></span></button>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     </div>
+                     <div class="modal-body">
+                        <div class="modal-body_Div">
+                           <table class="modal-body_table">
+                              <tbody class="modal-body_tbody">
+                                 <tr >
+                                    <td>
+                                       <div>Event Photo</div>
+                                    </td>
+                                    <td>
+                                       <div class="frst_div" >
+                                          <div class="first-child uploadDiv">
+                                             <span class="glyphicon glyphicon-camera"></span>Upload Photo
+                                          </div>
+                                          <input id="input_btn" type="file">
+                                          <div class="last-child">
+                                             <span class="glyphicon glyphicon-picture"></span>Choose a Theme
+                                          </div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <div>Event name</div>
+                                    </td>
+                                    <td>
+                                       <div id="Event_name_id"><input id="Event_name_input" type="text" placeholder="Add a short,clear name"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <div>Location</div>
+                                    </td>
+                                    <td>
+                                       <div id="Location_id"><input id="Location_input" type="text" placeholder="Include a place or address"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <div>Date/Time</div>
+                                    </td>
+                                    <td>
+                                       <div id="Date-Time_id">
+                                          <input  class="date-picker" type="text">
+                                          <input id="Time_input" type="text">
+                                          <a href="#">UTC+05:30</a>
+                                          <a href="#">+ End Time</a>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <div>Description</div>
+                                    </td>
+                                    <td>
+                                       <div id="Description_id"><input id="Description_input" type="text" placeholder="Tell people more about the event"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <div>
+                                    </td>
+                                    <td><div id="CheckBox_id"><input type="checkbox" >Guests can invite friends</div></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button"  id="cancel_id"class="btn" data-dismiss="modal">Cancel</button>
+                           <button type="button" id="creat_id"class="btn" data-dismiss="modal">Create</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+<script type="text/javascript">
+   function popup(){   
+      $("#myModal").modal('show');
+   
+      $(".uploadDiv").click(function(){
+         $("#input_btn").click();
+      });
+     $(".date-picker").datepicker({
+           showOn: "both",
+           buttonImage: "SEO_Business-14-512.png"
+     });
+   };
+</script>
